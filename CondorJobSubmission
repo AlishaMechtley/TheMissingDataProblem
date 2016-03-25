@@ -1,0 +1,443 @@
+Universe = Vanilla
+Executable = CondorStemRunner.py
+Output = output/$(Process).out
+Error  = error/$(Process).err
+Log    = logs/$(Process).log
+Notification = NEVER
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT_OR_EVICT
+transfer_input_files = $(Process).tar.gz, DendroPy-3.12.0-py2.6.egg, stem.jar, MySettings.txt
+
+arguments = 0.1 1000.0 2
+queue
+arguments = 0.2 1000.0 2
+queue
+arguments = 0.3 1000.0 2
+queue
+arguments = 0.4 1000.0 2
+queue
+arguments = 0.5 1000.0 2
+queue
+arguments = 0.6 1000.0 2
+queue
+arguments = 0.7 1000.0 2
+queue
+arguments = 0.8 1000.0 2
+queue
+arguments = 0.9 1000.0 2
+queue
+arguments = 0.1 10000.0 2
+queue
+arguments = 0.2 10000.0 2
+queue
+arguments = 0.3 10000.0 2
+queue
+arguments = 0.4 10000.0 2
+queue
+arguments = 0.5 10000.0 2
+queue
+arguments = 0.6 10000.0 2
+queue
+arguments = 0.7 10000.0 2
+queue
+arguments = 0.8 10000.0 2
+queue
+arguments = 0.9 10000.0 2
+queue
+arguments = 0.1 100000.0 2
+queue
+arguments = 0.2 100000.0 2
+queue
+arguments = 0.3 100000.0 2
+queue
+arguments = 0.4 100000.0 2
+queue
+arguments = 0.5 100000.0 2
+queue
+arguments = 0.6 100000.0 2
+queue
+arguments = 0.7 100000.0 2
+queue
+arguments = 0.8 100000.0 2
+queue
+arguments = 0.9 100000.0 2
+queue
+arguments = 0.1 1000000.0 2
+queue
+arguments = 0.2 1000000.0 2
+queue
+arguments = 0.3 1000000.0 2
+queue
+arguments = 0.4 1000000.0 2
+queue
+arguments = 0.5 1000000.0 2
+queue
+arguments = 0.6 1000000.0 2
+queue
+arguments = 0.7 1000000.0 2
+queue
+arguments = 0.8 1000000.0 2
+queue
+arguments = 0.9 1000000.0 2
+queue
+arguments = 0.1 1000.0 4
+queue
+arguments = 0.2 1000.0 4
+queue
+arguments = 0.3 1000.0 4
+queue
+arguments = 0.4 1000.0 4
+queue
+arguments = 0.5 1000.0 4
+queue
+arguments = 0.6 1000.0 4
+queue
+arguments = 0.7 1000.0 4
+queue
+arguments = 0.8 1000.0 4
+queue
+arguments = 0.9 1000.0 4
+queue
+arguments = 0.1 10000.0 4
+queue
+arguments = 0.2 10000.0 4
+queue
+arguments = 0.3 10000.0 4
+queue
+arguments = 0.4 10000.0 4
+queue
+arguments = 0.5 10000.0 4
+queue
+arguments = 0.6 10000.0 4
+queue
+arguments = 0.7 10000.0 4
+queue
+arguments = 0.8 10000.0 4
+queue
+arguments = 0.9 10000.0 4
+queue
+arguments = 0.1 100000.0 4
+queue
+arguments = 0.2 100000.0 4
+queue
+arguments = 0.3 100000.0 4
+queue
+arguments = 0.4 100000.0 4
+queue
+arguments = 0.5 100000.0 4
+queue
+arguments = 0.6 100000.0 4
+queue
+arguments = 0.7 100000.0 4
+queue
+arguments = 0.8 100000.0 4
+queue
+arguments = 0.9 100000.0 4
+queue
+arguments = 0.1 1000000.0 4
+queue
+arguments = 0.2 1000000.0 4
+queue
+arguments = 0.3 1000000.0 4
+queue
+arguments = 0.4 1000000.0 4
+queue
+arguments = 0.5 1000000.0 4
+queue
+arguments = 0.6 1000000.0 4
+queue
+arguments = 0.7 1000000.0 4
+queue
+arguments = 0.8 1000000.0 4
+queue
+arguments = 0.9 1000000.0 4
+queue
+arguments = 0.1 1000.0 8
+queue
+arguments = 0.2 1000.0 8
+queue
+arguments = 0.3 1000.0 8
+queue
+arguments = 0.4 1000.0 8
+queue
+arguments = 0.5 1000.0 8
+queue
+arguments = 0.6 1000.0 8
+queue
+arguments = 0.7 1000.0 8
+queue
+arguments = 0.8 1000.0 8
+queue
+arguments = 0.9 1000.0 8
+queue
+arguments = 0.1 10000.0 8
+queue
+arguments = 0.2 10000.0 8
+queue
+arguments = 0.3 10000.0 8
+queue
+arguments = 0.4 10000.0 8
+queue
+arguments = 0.5 10000.0 8
+queue
+arguments = 0.6 10000.0 8
+queue
+arguments = 0.7 10000.0 8
+queue
+arguments = 0.8 10000.0 8
+queue
+arguments = 0.9 10000.0 8
+queue
+arguments = 0.1 100000.0 8
+queue
+arguments = 0.2 100000.0 8
+queue
+arguments = 0.3 100000.0 8
+queue
+arguments = 0.4 100000.0 8
+queue
+arguments = 0.5 100000.0 8
+queue
+arguments = 0.6 100000.0 8
+queue
+arguments = 0.7 100000.0 8
+queue
+arguments = 0.8 100000.0 8
+queue
+arguments = 0.9 100000.0 8
+queue
+arguments = 0.1 1000000.0 8
+queue
+arguments = 0.2 1000000.0 8
+queue
+arguments = 0.3 1000000.0 8
+queue
+arguments = 0.4 1000000.0 8
+queue
+arguments = 0.5 1000000.0 8
+queue
+arguments = 0.6 1000000.0 8
+queue
+arguments = 0.7 1000000.0 8
+queue
+arguments = 0.8 1000000.0 8
+queue
+arguments = 0.9 1000000.0 8
+queue
+arguments = 0.1 1000.0 16
+queue
+arguments = 0.2 1000.0 16
+queue
+arguments = 0.3 1000.0 16
+queue
+arguments = 0.4 1000.0 16
+queue
+arguments = 0.5 1000.0 16
+queue
+arguments = 0.6 1000.0 16
+queue
+arguments = 0.7 1000.0 16
+queue
+arguments = 0.8 1000.0 16
+queue
+arguments = 0.9 1000.0 16
+queue
+arguments = 0.1 10000.0 16
+queue
+arguments = 0.2 10000.0 16
+queue
+arguments = 0.3 10000.0 16
+queue
+arguments = 0.4 10000.0 16
+queue
+arguments = 0.5 10000.0 16
+queue
+arguments = 0.6 10000.0 16
+queue
+arguments = 0.7 10000.0 16
+queue
+arguments = 0.8 10000.0 16
+queue
+arguments = 0.9 10000.0 16
+queue
+arguments = 0.1 100000.0 16
+queue
+arguments = 0.2 100000.0 16
+queue
+arguments = 0.3 100000.0 16
+queue
+arguments = 0.4 100000.0 16
+queue
+arguments = 0.5 100000.0 16
+queue
+arguments = 0.6 100000.0 16
+queue
+arguments = 0.7 100000.0 16
+queue
+arguments = 0.8 100000.0 16
+queue
+arguments = 0.9 100000.0 16
+queue
+arguments = 0.1 1000000.0 16
+queue
+arguments = 0.2 1000000.0 16
+queue
+arguments = 0.3 1000000.0 16
+queue
+arguments = 0.4 1000000.0 16
+queue
+arguments = 0.5 1000000.0 16
+queue
+arguments = 0.6 1000000.0 16
+queue
+arguments = 0.7 1000000.0 16
+queue
+arguments = 0.8 1000000.0 16
+queue
+arguments = 0.9 1000000.0 16
+queue
+arguments = 0.1 1000.0 32
+queue
+arguments = 0.2 1000.0 32
+queue
+arguments = 0.3 1000.0 32
+queue
+arguments = 0.4 1000.0 32
+queue
+arguments = 0.5 1000.0 32
+queue
+arguments = 0.6 1000.0 32
+queue
+arguments = 0.7 1000.0 32
+queue
+arguments = 0.8 1000.0 32
+queue
+arguments = 0.9 1000.0 32
+queue
+arguments = 0.1 10000.0 32
+queue
+arguments = 0.2 10000.0 32
+queue
+arguments = 0.3 10000.0 32
+queue
+arguments = 0.4 10000.0 32
+queue
+arguments = 0.5 10000.0 32
+queue
+arguments = 0.6 10000.0 32
+queue
+arguments = 0.7 10000.0 32
+queue
+arguments = 0.8 10000.0 32
+queue
+arguments = 0.9 10000.0 32
+queue
+arguments = 0.1 100000.0 32
+queue
+arguments = 0.2 100000.0 32
+queue
+arguments = 0.3 100000.0 32
+queue
+arguments = 0.4 100000.0 32
+queue
+arguments = 0.5 100000.0 32
+queue
+arguments = 0.6 100000.0 32
+queue
+arguments = 0.7 100000.0 32
+queue
+arguments = 0.8 100000.0 32
+queue
+arguments = 0.9 100000.0 32
+queue
+arguments = 0.1 1000000.0 32
+queue
+arguments = 0.2 1000000.0 32
+queue
+arguments = 0.3 1000000.0 32
+queue
+arguments = 0.4 1000000.0 32
+queue
+arguments = 0.5 1000000.0 32
+queue
+arguments = 0.6 1000000.0 32
+queue
+arguments = 0.7 1000000.0 32
+queue
+arguments = 0.8 1000000.0 32
+queue
+arguments = 0.9 1000000.0 32
+queue
+arguments = 0.1 1000.0 64
+queue
+arguments = 0.2 1000.0 64
+queue
+arguments = 0.3 1000.0 64
+queue
+arguments = 0.4 1000.0 64
+queue
+arguments = 0.5 1000.0 64
+queue
+arguments = 0.6 1000.0 64
+queue
+arguments = 0.7 1000.0 64
+queue
+arguments = 0.8 1000.0 64
+queue
+arguments = 0.9 1000.0 64
+queue
+arguments = 0.1 10000.0 64
+queue
+arguments = 0.2 10000.0 64
+queue
+arguments = 0.3 10000.0 64
+queue
+arguments = 0.4 10000.0 64
+queue
+arguments = 0.5 10000.0 64
+queue
+arguments = 0.6 10000.0 64
+queue
+arguments = 0.7 10000.0 64
+queue
+arguments = 0.8 10000.0 64
+queue
+arguments = 0.9 10000.0 64
+queue
+arguments = 0.1 100000.0 64
+queue
+arguments = 0.2 100000.0 64
+queue
+arguments = 0.3 100000.0 64
+queue
+arguments = 0.4 100000.0 64
+queue
+arguments = 0.5 100000.0 64
+queue
+arguments = 0.6 100000.0 64
+queue
+arguments = 0.7 100000.0 64
+queue
+arguments = 0.8 100000.0 64
+queue
+arguments = 0.9 100000.0 64
+queue
+arguments = 0.1 1000000.0 64
+queue
+arguments = 0.2 1000000.0 64
+queue
+arguments = 0.3 1000000.0 64
+queue
+arguments = 0.4 1000000.0 64
+queue
+arguments = 0.5 1000000.0 64
+queue
+arguments = 0.6 1000000.0 64
+queue
+arguments = 0.7 1000000.0 64
+queue
+arguments = 0.8 1000000.0 64
+queue
+arguments = 0.9 1000000.0 64
+queue
+
