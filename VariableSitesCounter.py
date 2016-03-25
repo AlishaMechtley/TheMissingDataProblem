@@ -43,8 +43,8 @@ def VarSiteCount(filename):
 			else:					# GGT, correct split 
 				twoDiffCount+=1
 				corrSplitCount+=1
-		else:							# nucA!=nucB
-			if nucA==nucC:			# GTG, incorrect split
+		else:						# nucA!=nucB
+			if nucA==nucC:				# GTG, incorrect split
 				twoDiffCount+=1
 			else:
 				if nucB==nucC: 			# GTT, incorrect split
