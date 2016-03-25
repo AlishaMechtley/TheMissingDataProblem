@@ -15,12 +15,11 @@ To simulate species trees, I gave DendroPy the species tree specifications in ne
 
 *(1:T2,  2:T2): T1-T2, 3:T1)*
 
-where T1 ranges from 1 to 1,000,000 and T2 is calculated as T1 multiplied by a ratio for 9 different ratios, 0.1 through 0.9 (i.e., T2 = 10,000, 20,000, … , 90,000). I set the number of individuals sampled from each species to be 1 and the number of genes to be 1. The population size, Ne, is given in generations and varies exponentially with a base of 10 (Ne= 1000, 10000, 100000, 1000000). Then, I created a gene tree from the species tree using DendroPy’s constrained Kingman function (See Appendix 1, TreeSim.py).
+where T1 ranges from 1 to 1,000,000 and T2 is calculated as T1 multiplied by a ratio for 9 different ratios, 0.1 through 0.9 (i.e., T2 = 10,000, 20,000, … , 90,000). I set the number of individuals sampled from each species to be 1 and the number of genes to be 1. The population size, Ne, is given in generations and varies exponentially with a base of 10 (Ne= 1000, 10000, 100000, 1000000). Then, I created a gene tree from the species tree using DendroPy’s constrained Kingman function (See TreeSim.py).
 
 ## Counting Variable Sites
 
-To begin, I first created matrices to determine a suitable range of population sizes to study where Ne designates effective population size 
-Then I looked for the following (See Appendix 2, VariableSitesCounter.py). 
+To begin, I first created matrices to determine a suitable range of population sizes to study where Ne designates effective population size. Then I looked for the following (See VariableSitesCounter.py). 
 
 1) number of invariable sites 
 2) number of sites with 2 differences (including both correct and incorrect split)
@@ -77,17 +76,14 @@ All the files in the error folder show up as 0 and look empty.
 
 ## Log 
 Log files are all different, talk about how many times rerun before failed or successful
+Question: Is there a way to reduce the size of the log files? Perhaps I'll tell stem not to output percentages.
 
 ## Output 
 Output files contains the .out files which are either 265.2 or 0 MB. 
 
-
 The matrices have the Ne values from left to right and the ratios from top to bottom (for example, the top left corner is the result of Ne=1000 and ratio=0.1).
 
-
 The random tree selector did not select trees randomly (they are all the same).
-
-Question: Is there a way to reduce the size of the log files? Perhaps I'll tell stem not to output percentages.
 
 Note: Important to check the space available on the cluster.
 
