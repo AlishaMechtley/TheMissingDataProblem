@@ -3,8 +3,19 @@
 
 ## Species and Gene Tree Simulation
 
-Workflow of the simulation study can be generalized as follows: 1) Generate species trees, 2) generate gene trees from species trees, 3) generate sequence data from the gene trees, 4) estimate the maximum likelihood gene trees from the sequence data, reconstruct the species trees from the estimated gene trees and compare to step 1, 5) repeat step 4 with missing data.
-To simulate species trees, I gave DendroPy the species tree specifications in newick format: (1:T2,  2:T2): T1-T2, 3:T1) where T1 ranges from 1 to 1,000,000 and T2 is calculated as T1 multiplied by a ratio for 9 different ratios, 0.1 through 0.9 (i.e., T2 = 10,000, 20,000, … , 90,000). I set the number of individuals sampled from each species to be 1 and the number of genes to be 1. The population size, Ne, is given in generations and varies exponentially with a base of 10 (Ne= 1000, 10000, 100000, 1000000). Then, I created a gene tree from the species tree using DendroPy’s constrained Kingman function (See Appendix 1, TreeSim.py).
+Workflow of the simulation study can be generalized as follows: 
+
+1) Generate species trees.
+2) Generate gene trees from species trees. 
+3) Generate sequence data from the gene trees.
+4) Estimate the maximum likelihood gene trees from the sequence data, reconstruct the species trees from the estimated gene trees and compare to step 1. 
+5) Repeat step 4 with missing data.
+
+To simulate species trees, I gave DendroPy the species tree specifications in newick format: 
+
+*(1:T2,  2:T2): T1-T2, 3:T1)*
+
+where T1 ranges from 1 to 1,000,000 and T2 is calculated as T1 multiplied by a ratio for 9 different ratios, 0.1 through 0.9 (i.e., T2 = 10,000, 20,000, … , 90,000). I set the number of individuals sampled from each species to be 1 and the number of genes to be 1. The population size, Ne, is given in generations and varies exponentially with a base of 10 (Ne= 1000, 10000, 100000, 1000000). Then, I created a gene tree from the species tree using DendroPy’s constrained Kingman function (See Appendix 1, TreeSim.py).
 
 ## Counting Variable Sites
 
@@ -20,7 +31,7 @@ Then I looked for the following (See Appendix 2, VariableSitesCounter.py).
 
 The results of the matrices of variable sites led us to decide that a T1-value of 100,000 was a good place to start for using condor. 
 
-##Randomly Choosing Trees
+## Randomly Choosing Trees
 
 There are 100 trees simulated for each ratio (0.1 through 0.9). There are 2, 4, 8, 16, 32, and 64 trees randomly chosen from the 100 (with duplication) for each ratio (See RandomTreeExtract.py).
 
@@ -46,7 +57,7 @@ files:
 ```
 Note: Might Change number of saved trees to a larger number.)
 
-To Run STEM 2.0 on a file (e.g., Ne_1000.0t_0.1k_2.tre) the program StemRunner.py replaces part of MySettings.txt file (i.e., files: TreeNameHere.tre: 1.00) with the name of the next tree (files: Ne_1000.0t_0.1k_2.tre: 1.00). Running the program with Run=1 produces a file called boot.tre with the best tree.
+To Run STEM 2.0 on a file (e.g., ```Ne_1000.0t_0.1k_2.tre```) the program StemRunner.py replaces part of MySettings.txt file (i.e., files: TreeNameHere.tre: 1.00) with the name of the next tree (files: Ne_1000.0t_0.1k_2.tre: 1.00). Running the program with Run=1 produces a file called boot.tre with the best tree.
 Running the program with Run=2 produces a file called search.tre with the best trees and their likelihoods. This takes on the order of 100 times longer for STEM to run. I have used Run=2, but I still need to decide how to check if the tree is the likeliest or not (Use only the one with the highest ML score. What if there are two with the same score? What if the second highest score is the correct tree and it is very close to the highest score?
 
 Note: Want to redo with two, four, and possibly 8.
@@ -61,13 +72,13 @@ Files like k2_Ne1000.0_tRatio0.1.txt contain a number
 - -1 is 2 bytes and produces an err file (Stem crashed so it couldn’t get a count)
 - 0 is 1 byte 
 
-Error
+## Error
 All the files in the error folder show up as 0 and look empty.
 
-Log 
+## Log 
 Log files are all different, talk about how many times rerun before failed or successful
 
-Output 
+## Output 
 Output files contains the .out files which are either 265.2 or 0 MB. 
 
 
@@ -78,5 +89,5 @@ The random tree selector did not select trees randomly (they are all the same).
 
 Question: Is there a way to reduce the size of the log files? Perhaps I'll tell stem not to output percentages.
 
-Note: Important to check the data available on the cluster.
+Note: Important to check the space available on the cluster.
 
