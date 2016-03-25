@@ -40,16 +40,16 @@ def VarSiteCount(filename):
 		if nucA==nucB:
 			if nucB==nucC: 				# GGG, All three same 
 				invCount+=1
-			else:						# GGT, correct split 
+			else:					# GGT, correct split 
 				twoDiffCount+=1
 				corrSplitCount+=1
 		else:							# nucA!=nucB
-			if nucA==nucC:				# GTG, incorrect split
+			if nucA==nucC:			# GTG, incorrect split
 				twoDiffCount+=1
 			else:
 				if nucB==nucC: 			# GTT, incorrect split
 					twoDiffCount+=1
-				else: 					# AGT, All three diff
+				else: 				# AGT, All three diff
 					threeDiffCount+=1
 	return invCount, twoDiffCount, threeDiffCount, corrSplitCount, twoDiffCount-corrSplitCount
 
@@ -58,7 +58,7 @@ if __name__== '__main__':
 	Tsplit =  numpy.linspace(.1,.9,9)		# T2
 	rateA = numpy.logspace(-4,0,5)			# .0001 to 1
 	rateA=numpy.insert(rateA,0,0)
-	Ne = numpy.logspace(3,6,4) 				#1000, 10000,100000,1000000
+	Ne = numpy.logspace(3,6,4) 			#1000, 10000,100000,1000000
 	
 	for n in Ne:
 		# create a 9x5 matrix for each thing we are counting
