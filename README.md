@@ -1,12 +1,16 @@
  Summary of Work on the Missing Data Problem
 =============================================
 
-# How To Run:
+## How To Run:
 
 1) Place all the scripts in your space on the cluster
+
 2) Run the Condor Submission Script using Condor.
 
-## Species and Gene Tree Simulation (TreeSim.Py)
+
+## Summary of programs and results
+
+### Species and Gene Tree Simulation (TreeSim.Py)
 
 Workflow of the simulation study can be generalized as follows: 
 
@@ -26,7 +30,7 @@ I set the number of individuals sampled from each species to be 1 and the number
 
 The parameter space can be easily understood by looking at the condorSubmissionScript (which was generated with print statements in a terminal because there is really no excuse for doing anything more than 20 times if you are a programmer. ;)
 
-## Counting Variable Sites (VariableSitesCounter.Py)
+### Counting Variable Sites (VariableSitesCounter.Py)
 
 To begin, I first created matrices to determine a suitable range of population sizes to study where Ne designates effective population size. Then I looked for the following (See VariableSitesCounter.py). 
 
@@ -39,11 +43,11 @@ To begin, I first created matrices to determine a suitable range of population s
 
 The results of the matrices of variable sites led us to decide that a T1-value of 100,000 was a good place to start for using condor. 
 
-## Randomly Choosing Trees (RandomTreeExtract.py)
+### Randomly Choosing Trees (RandomTreeExtract.py)
 
 There are 100 trees simulated for each ratio (0.1 through 0.9). There are 2, 4, 8, 16, 32, and 64 trees randomly chosen from the 100 (with duplication) for each ratio (See RandomTreeExtract.py).
 
-# STEM (FOr single use: StemRunner.Py, StemMatrixResults.py) (For Condor: CondorStemRunner.py and CondorTreeCounter.Py)
+### STEM (FOr single use: StemRunner.Py, StemMatrixResults.py) (For Condor: CondorStemRunner.py and CondorTreeCounter.Py)
 
 STEM is a program for inferring maximum likelihood species trees from a collection of estimated gene trees under the coalescent model using a simulated annealing algorithm. Trees must be rooted and satisfy a molecular clock. The parameter controlling the rate of cooling, beta, is specified in the settings ﬁle. Beta must be a number between 0 and 1. I chose 0.0005. Theta is the value of θ = 4Neµ to be used to make the correspondence between gene trees branch lengths and species tree branch lengths. I chose θ = 1.  According to Hommaller, Knowles, and Kubatko, 2013 (in press), This value affects the likelihood score but not the selection of the best ML trees. The STEM algorithm terminates when  a suﬃcient number of trees have been proposed from the current tree without any of them resulting in acceptance, or the search is alternating between a collection of high-likelihood trees that are separated from one another by a single rearrangement, and a suﬃcient number of iterations have passed since any alternative trees have been accepted.
 
@@ -70,7 +74,7 @@ Running the program with Run=2 produces a file called search.tre with the best t
 
 Note: Want to redo with two, four, and possibly 8.
 
-## Results
+### Results
 Stem was run on all 100 reps of each parameter setting. 
 The program opens each tree file and runs STEM then checks the output to see if it has the correct branching (species 1 and species 2 match).
 
@@ -80,14 +84,14 @@ Files like k2_Ne1000.0_tRatio0.1.txt contain a number
 - -1 is 2 bytes and produces an err file (Stem crashed so it couldn’t get a count)
 - 0 is 1 byte 
 
-## Error
+### Error
 All the files in the error folder show up as 0 and look empty.
 
-## Log 
+### Log 
 Log files are all different, talk about how many times rerun before failed or successful
 Question: Is there a way to reduce the size of the log files? Perhaps I'll tell stem not to output percentages.
 
-## Output 
+### Output 
 Output files contains the .out files which are either 265.2 or 0 MB. 
 
 The matrices have the Ne values from left to right and the ratios from top to bottom (for example, the top left corner is the result of Ne=1000 and ratio=0.1).
