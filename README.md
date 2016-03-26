@@ -57,7 +57,9 @@ The results of the matrices of variable sites led us to decide that a T1-value o
 
 There are 100 trees simulated for each ratio (0.1 through 0.9). There are 2, 4, 8, 16, 32, and 64 trees randomly chosen from the 100 (with duplication) for each ratio (See RandomTreeExtract.py).
 
-### STEM (FOr single use: StemRunner.Py, StemMatrixResults.py) (For Condor: CondorStemRunner.py and CondorTreeCounter.Py)
+### STEM 
+### (Single use: StemRunner.Py, StemMatrixResults.py) 
+### (Running Parallel in Condor: CondorStemRunner.py and CondorTreeCounter.Py)
 
 STEM is a program for inferring maximum likelihood species trees from a collection of estimated gene trees under the coalescent model using a simulated annealing algorithm. Trees must be rooted and satisfy a molecular clock. The parameter controlling the rate of cooling, beta, is specified in the settings ﬁle. Beta must be a number between 0 and 1. I chose 0.0005. Theta is the value of θ = 4Neµ to be used to make the correspondence between gene trees branch lengths and species tree branch lengths. I chose θ = 1.  According to Hommaller, Knowles, and Kubatko, 2013 (in press), This value affects the likelihood score but not the selection of the best ML trees. The STEM algorithm terminates when  a suﬃcient number of trees have been proposed from the current tree without any of them resulting in acceptance, or the search is alternating between a collection of high-likelihood trees that are separated from one another by a single rearrangement, and a suﬃcient number of iterations have passed since any alternative trees have been accepted.
 
