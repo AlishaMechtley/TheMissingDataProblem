@@ -10,6 +10,16 @@
 
 ## Summary of programs and results
 
+This program was designed to find the area of parameter space that is going to be a problem for missing data. Because there is a lot of missing data in the mitochondrial genomes that I produce, I wanted to compare my missing data against the simulated results.
+
+I chose Condor because is is essentially free for me to use in my department. A well known problem with condor is that it does not try to rerun a process when it failes. 
+My analysis was no different. It resulted in a lot of cases where there are no results. This requires an additional program to find which ones failed (using glob or re over multiple files) and rerun those analyses.
+I decided not write a program to do this because it would take too long to run such an anlysis. I am currently working on a way to do the analysis with ETE using Amazon Web services.
+The goal is so to fill in the complete matrix in 20 minutes or less for only a slight monetary cost.
+
+The results of the early Condor based implementation are as follows.
+
+
 ### Species and Gene Tree Simulation (TreeSim.Py)
 
 Workflow of the simulation study can be generalized as follows: 
@@ -97,9 +107,4 @@ Output files contains the .out files which are either 265.2 or 0 MB.
 The matrices have the Ne values from left to right and the ratios from top to bottom (for example, the top left corner is the result of Ne=1000 and ratio=0.1).
 
 The random tree selector did not select trees randomly (they are all the same) and will need to be fixed. Check for logic bug or rounding error.
-
-Note: Condor is free for me to use in my department. The problem with condor is that it does not try to rerun a process when it failes. 
-My analysis was no different. It resulted in a lot of cases where there are no results. This requires an additional program to find which one failed and rerun those analyses.
-I did not write a program to do this because it would take too long to run such an anlysis. I am currently working on a way to do the analysis with ETE using Amazon Web services.
-The goal is so to fill in the complete matrix in 20 minutes or less for only a slight monetary cost.
 
