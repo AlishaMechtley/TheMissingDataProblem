@@ -23,13 +23,13 @@ The results of the early Condor based implementation are as follows.
 ### Species and Gene Tree Simulation (TreeSim.Py)
 
 Workflow of the simulation study can be generalized as follows: 
-
+```
 1) Generate species trees.
 2) Generate gene trees from species trees. 
 3) Generate sequence data from the gene trees.
 4) Estimate the maximum likelihood gene trees from the sequence data, reconstruct the species trees from the estimated gene trees and compare to step 1. 
 5) Repeat step 4 with missing data.
-
+```
 To simulate species trees, I gave DendroPy the species tree specifications in newick format: 
 
 *(1:T2,  2:T2): T1-T2, 3:T1)*
