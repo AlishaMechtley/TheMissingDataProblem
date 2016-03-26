@@ -88,9 +88,9 @@ species:
 files:
   Ne1000.0_t0.1_k2_rep99.tre: 0.001
 ```
-Note: Might Change number of saved trees to a larger number.)
+Note: Might change number of saved trees to a larger number.)
 
-To Run STEM 2.0 on a file (e.g., ```Ne_1000.0t_0.1k_2.tre```) the program StemRunner.py replaces part of MySettings.txt file (i.e., files: TreeNameHere.tre: 1.00) with the name of the next tree (files: Ne_1000.0t_0.1k_2.tre: 1.00). Running the program with Run=1 produces a file called boot.tre with the best tree.
+To run STEM 2.0 on a file (e.g., ```Ne_1000.0t_0.1k_2.tre```) the program StemRunner.py replaces part of MySettings.txt file (i.e., files: TreeNameHere.tre: 1.00) with the name of the next tree (files: Ne_1000.0t_0.1k_2.tre: 1.00). Running the program with Run=1 produces a file called boot.tre with the best tree.
 Running the program with Run=2 produces a file called search.tre with the best trees and their likelihoods. This takes on the order of 100 times longer for STEM to run. I have used Run=2, but I still need to decide how to check if the tree is the likeliest or not (Use only the one with the highest ML score. What if there are two with the same score? What if the second highest score is the correct tree and it is very close to the highest score?
 
 Note: Want to redo with two, four, and possibly 8.
@@ -102,20 +102,20 @@ The program opens each tree file and runs STEM then checks the output to see if 
 Files like k2_Ne1000.0_tRatio0.1.txt contain a number
 
 - 100 is 3 bytes
-- -1 is 2 bytes and produces an err file (Stem crashed so it couldn’t get a count)
+- -1 is 2 bytes and produces an err file (Meaning Stem crashed so it couldn’t get a count)
 - 0 is 1 byte 
 
 ### Error
-All the files in the error folder show up as 0 and look empty.
+All the files in the error folder show up as 0 and look empty. No errors reported.
 
 ### Log 
-Log files are all different, talk about how many times rerun before failed or successful
-Question: Is there a way to reduce the size of the log files? Perhaps I'll tell stem not to output percentages.
+Log files are all different. They report the number of times the analyses were rerun before failed or was successful.
+Note: Should look into to reducing the size of the log files. Perhaps I'll tell Stem not to output percentages.
 
 ### Output 
 Output files contains the .out files which are either 265.2 or 0 MB. 
 
 The matrices have the Ne values from left to right and the ratios from top to bottom (for example, the top left corner is the result of Ne=1000 and ratio=0.1).
 
-The random tree selector did not select trees randomly (they are all the same) and will need to be fixed. Check for logic bug or rounding error.
+The random tree selector did not select trees randomly (they are all the same). This will need to be fixed (check for logic bug or rounding error since there doesn't appear to be a problem with the random library).
 
