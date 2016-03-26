@@ -7,6 +7,15 @@
 
 2) Run the Condor Submission Script using Condor.
 
+*%  condor_submit CondorJobSubmission*
+
+In order to see what the state of the job queue is, use the command condor_q
+
+*%  condor_q*
+
+This command will print a table containing information about the jobs that have submitted. You should be able to identify the jobs that you have just submitted. After some time, your job will complete. 
+
+
 
 ## Summary of programs and results
 
