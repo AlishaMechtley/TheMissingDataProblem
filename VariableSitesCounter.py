@@ -5,7 +5,7 @@ import numpy
 
 ####### PUT THIS IN A T FOLDER TO RUN ####
 
-#function opens a file, looks at three sequences on a per nuc. basis
+# function opens a file, looks at three sequences on a per nuc. basis
 # returns: 
 # 1) the number of invariable sites 
 # 2) number of sites with 2 differences
