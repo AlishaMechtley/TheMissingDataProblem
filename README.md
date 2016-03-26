@@ -34,22 +34,22 @@ To simulate species trees, I gave DendroPy the species tree specifications in ne
 
 *(1:T2,  2:T2): T1-T2, 3:T1)*
 
-where T1 ranges from 1 to 1,000,000 (e.g., 10000, 20000, ..., 90000,1000000)and T2 is calculated as T1 multiplied by a ratio for 9 different ratios, 0.1 through 0.9 (i.e., T2 = 10,000, 20,000, … , 90,000). 
+where T1 ranges from 1 to 1,000,000 (e.g., 10000, 20000, ..., 90000,1000000) and T2 is calculated as T1 multiplied by a ratio for 9 different ratios, 0.1 through 0.9 (i.e., T2 = 10,000, 20,000, … , 90,000). 
 
-I set the number of individuals sampled from each species to be 1 and the number of genes to be 1. The population size, Ne, is given in generations and varies exponentially with a base of 10 (Ne= 1000, 10000, 100000, 1000000). Then, I created a gene tree from the species tree using DendroPy’s constrained Kingman function (See TreeSim.py).
+To begin, I set the number of individuals sampled from each species to be 1 and the number of genes to be 1. The population size, Ne, is given in generations and varies exponentially with a base of 10 (Ne= 1000, 10000, 100000, 1000000). Then, I created a gene tree from the species tree using DendroPy’s constrained Kingman function.
 
-The parameter space can be easily understood by looking at the condorSubmissionScript (which was generated with print statements in a terminal because there is really no excuse for doing anything more than 20 times if you are a programmer. ;)
+The parameter space can be easily understood just by looking at the condorSubmissionScript. The parameter settings were generated with print statements in a terminal because there is really no excuse for typing anything more than 20 times if you are a programmer. ;)
 
 ### Counting Variable Sites (VariableSitesCounter.Py)
 
-To begin, I first created matrices to determine a suitable range of population sizes to study where Ne designates effective population size. Then I looked for the following (See VariableSitesCounter.py). 
-
+To begin, I first created matrices to determine a suitable range of population sizes to study where Ne designates effective population size. Then I looked for the following: 
+```
 1) number of invariable sites 
 2) number of sites with 2 differences (including both correct and incorrect split)
 3) number of sites with 3 differences 
 4) sites w/correct split (A and B same)
 5) sites with incorrect split (#2 - #4)
-
+```
 
 The results of the matrices of variable sites led us to decide that a T1-value of 100,000 was a good place to start for using condor. 
 
