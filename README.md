@@ -5,7 +5,7 @@
 
 1) Place all the scripts in your space on the cluster
 
-2) Run the Condor Submission Script using Condor.
+2) Run the Condor submission script using Condor.
 
 *%  condor_submit CondorJobSubmission*
 
@@ -21,7 +21,7 @@ This command will print a table containing information about the jobs that have 
 
 This program was designed to find the area of parameter space that is going to be a problem for missing data. Because there is a lot of missing data in the mitochondrial genomes that I produce, I wanted to compare my missing data against the simulated results.
 
-I chose Condor because it is essentially free for me to use in my department. A well known problem with condor is that it does not try to rerun a process when it fails. 
+I chose Condor because it is essentially free for me to use in my department. A well known problem with Condor is that it does not try to rerun a process when it fails. 
 My analysis was no different. It resulted in a lot of cases where there are no results. This requires an additional program to find which ones failed (using glob or re over multiple files) and rerun those analyses.
 I decided not write a program to do this because it would take too long to run such an anlysis. I am currently working on a way to do the analysis with ETE using Amazon Web services.
 The goal is so to fill in the complete matrix in 20 minutes or less for only a slight monetary cost.
