@@ -23,7 +23,7 @@ This program was designed to find the area of parameter space that is going to b
 
 I chose Condor because it is essentially free for me to use in my department. A well known problem with Condor is that it does not try to rerun a process when it fails. 
 My analysis was no different. It resulted in a lot of cases where there are no results. This requires an additional program to find which ones failed (using glob or re over multiple files) and rerun those analyses.
-I decided not write a program to do this because it would take too long to run such an anlysis. I am currently working on a way to do the analysis with ETE using Amazon Web services.
+I decided not to write a program to do this because it would take too long to run such an anlysis. I am currently working on a different way to do the analysis utilizing ETE visualizations and using Amazon Web services.
 The goal is so to fill in the complete matrix in 20 minutes or less for only a slight monetary cost.
 
 The results of the early Condor based implementation are as follows.
